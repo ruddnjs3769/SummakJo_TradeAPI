@@ -1,0 +1,49 @@
+{
+  // 사용가능한 전역객체에 대한 설정입니다.
+  // borwser : true시 window, document, fetch 등의 객체를 사용해도 에러가 나지 않습니다.
+  // node : true시 global. process 등의 객체를 사용해도 에러가 나지 않습니다.
+  "env": {
+    "browser": true,
+    "es2021": true
+    // node : false
+  },
+
+  // 어떤 lint 방식을 기반으로 할 것인지 설정합니다.
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended"],
+  "overrides": [], // 일부 파일에 다른 설정을 적용해줘야할 떄 사용합니다.
+
+  // jsx같은 확정 문법이나, babel같은 트렌스파일러를 사용해서 최신 문법으로 개발할때,
+  // 우리가 사용하고있는 문법이 무엇인지 eslint에게 알려주는 역할을 합니다.
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  // rules에 규칙을 다 적을 수 없기 때문에, 유명한 규칙을을 가져옵니다.
+  "plugins": ["react", "@typescript-eslint"],
+
+  // plugins외 추가 규칙을 설정합니다.
+  "rules": {
+    "no-console": "warn", // console 사용시 warning이 나타납니다. 배포할 떄 지워줘야하니까 warn합니다.
+    "linebreak-style": "off", // 맥, 윈도우로 개발하기때문에 개행문자가 Carrage return/Line feed인지 Line Feed인지 관여하지 않습니다.
+    "semi": ["error", "never"], // semicolon을 제거합니다.
+    "no-underscore-dangle": ["warn", { "allowAfterThis": true }], // this._bar()는 가능하고 그 외는 warning이 나타납니다.
+    "max-len": ["warn", { "code": 120, "tabWidth": 2 }], // tab은 2 space, 코드는 120자 이내로 작성합니다.
+    "spaced-comment": "off", // 주석 스타일 강제 취소, html, css에서 주석을 달 수 있습니다.
+    "no-param-reassign": "off", // 재할당 가능합니다. DOM을 다루다보면 재할당 할 일이 생긴다고 판단했습니다.
+    "prefer-arrow-callback": "off", // this를 다루게 될 일이 있을 수도 있으니까 off하였습니다.
+    "no-await-in-loop": "warn", // for문 안에서 await을 사용할 수 있습니다.
+    "quote-props": ["error", "as-needed"], // object의 key가 문자열이 아닌 경우에만 따옴표를 사용합니다.
+    // "indent": ["error", "tab"], // indent는 tab을 사용하고, tab은 2칸으로 prettier로 고정합니다.
+    "comma-dangle": ["error", "never"], // 객체의 마지막 속성에 콤마를 사용하지 않습니다.
+    "react/self-closing-comp": [
+      // 비어있는 컴포넌트는 self-closing을 강제합니다.
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ]
+  },
+  "ignorePatterns": ["node_modules/", "build/", "public/", "craco.config.js"]
+}

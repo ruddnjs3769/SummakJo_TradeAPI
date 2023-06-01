@@ -1,0 +1,30 @@
+{
+  "ES6 import from ": {
+    "prefix": "imf",
+    "body": ["import $0 from '$1'"],
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "Try Catch Scope": {
+    "prefix": "tc",
+    "body": "try {\n  $0\n} catch (err) {\n  throw new Error(err)\n}",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact"
+  },
+  "reactFunction": {
+    "prefix": "rfc",
+    "body": "import React from 'react';\n\nexport default function ${1:${TM_FILENAME_BASE}}() {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t);\n}\n\n",
+    "description": "Creates a React Function component",
+    "scope": "javascriptreact, typescriptreact"
+  },
+  "Import Module CSS": {
+    "prefix": "si",
+    "body": ["import styles from './$TM_FILENAME_BASE.module.css'"],
+    "description": "Import PostCSS",
+    "scope": "javascriptreact, typescriptreact"
+  },
+  "ClassName": {
+    "prefix": "cn",
+    "body": ["className={styles.$0}"],
+    "description": "Adding className",
+    "scope": "javascriptreact, typescriptreact"
+  }
+}
