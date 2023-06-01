@@ -20,6 +20,7 @@ prettier
 
 ```json
 {
+	
 	"printWidth": 120, // 한 줄에 120자로 제한합니다. eslint와 충돌을 막기 위한 옵션입니다.
 	"tabWidth": 2, // tabWidth를 2칸으로 설정합니다.
 	"useTabs": true, // \t 를 스페이스 대신 사용합니다. eslint에서 tab을 강제합니다. eslint와 충돌을 막기 위한 옵션입니다.
@@ -71,3 +72,10 @@ npm install sass
 ```
 
 # Branch 전략
+
+- feat : 기능을 추가했을 경우 사용합니다.
+- release : 배포시 사용합니다.
+- fix : 버그를 수정했을 경우 사용합니다.
+- refactor : 기존 코드를 리팩토링 했을 경우 사용합니다.
+- docs : 주석이나 문서 작업을 했을 경우 사용합니다. (기능적 변화가 없어야합니다.)
+- style : 코드 스타일이나, css작업을 했을 경우 사용합니다.
