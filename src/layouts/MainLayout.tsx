@@ -1,8 +1,16 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import MainHedaer from '@/components/MainHeader'
+import Footer from '@/components/Footer'
 
-type Props = {
-	children: React.ReactNode
-}
-export default function MainLayout({ children }: Props) {
-	return <div>{children}</div>
+export default function MainLayout() {
+  return (
+    <div>
+      <MainHedaer />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  )
 }
