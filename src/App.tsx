@@ -37,7 +37,7 @@ function App() {
     <Routes>
       <Route path="/user" element={<UserLayout />}>
         <Route path="/user/mypage/:username" element={<MyPage />} />
-        //Mypage!!!!
+        {/* MyPage!!!! */}
         <Route path="/user/mypage/:username/jjimItems" element={<JjimItems />} />
         <Route path="/user/mypage/:username/certProfile" element={<CertProfile />} />
         <Route path="/user/mypage/:username/certProfile/editProfile" element={<EditProfile />} />
@@ -60,6 +60,7 @@ function App() {
         <Route path="/user/:username/payment/checkOrder" element={<CheckOrder />} />
         <Route path="/user/:username/payment/orderComplete" element={<OrderComplete />} />
       </Route>
+      {/* Main!!!! */}
       <Route path="/" element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
