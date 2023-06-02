@@ -16,7 +16,6 @@ import EditProfile from './pages/mypage/certProfile/editProfile'
 import CheckAccount from './pages/mypage/account'
 import AddAccount from './pages/mypage/account/addAccount'
 import BankName from './pages/mypage/account/banks'
-
 //Access!!!!
 import Access from './pages/access'
 import AgeSignUp from './pages/access/ageSignUp'
@@ -45,7 +44,7 @@ function App() {
         <Route path="/user/mypage/:username/account" element={<CheckAccount />} />
         <Route path="/user/mypage/:username/account/addAccount" element={<AddAccount />} />
         <Route path="/user/mypage/:username/account/banks/:bankName" element={<BankName />} />
-        //Access!!!!
+        {/* Access!!!! */}
         <Route path="/user/access/" element={<Access />} />
         <Route path="/user/access/agesignup" element={<AgeSignUp />} />
         <Route path="/user/access/signupform" element={<SignUpForm />} />
@@ -53,13 +52,13 @@ function App() {
         <Route path="/user/access/logout" element={<LogOut />} />
         <Route path="/user/access/passwordcheck" element={<PasswordCheck />} />
         <Route path="/user/access/passwordchangeform" element={<PasswordChangeForm />} />
-        //Payment!!!!
-        <Route path="/user/payment/" element={<Payment />} />
-        <Route path="/user/payment/agreement" element={<Agreement />} />
-        <Route path="/user/payment/checkInfo" element={<CheckInfo />} />
-        <Route path="/user/payment/payMethod" element={<PayMethod />} />
-        <Route path="/user/payment/checkOrder" element={<CheckOrder />} />
-        <Route path="/user/payment/orderComplete" element={<OrderComplete />} />
+        {/* Payment!!!! */}
+        <Route path="/user/:username/payment" element={<Payment />} />
+        <Route path="/user/:username/payment/agreement" element={<Agreement />} />
+        <Route path="/user/:username/payment/checkInfo" element={<CheckInfo />} />
+        <Route path="/user/:username/payment/payMethod" element={<PayMethod />} />
+        <Route path="/user/:username/payment/checkOrder" element={<CheckOrder />} />
+        <Route path="/user/:username/payment/orderComplete" element={<OrderComplete />} />
       </Route>
       <Route path="/" element={<MainLayout />}>
         <Route path="/" element={<Home />} />
