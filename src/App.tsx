@@ -4,7 +4,10 @@ import Home from './pages/home'
 import { Route, Routes } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import UserLayout from './layouts/UserLayout'
+
+//Main!!!!
 import Search from './pages/search'
+import Detail from './pages/detail'
 //MyPage!!!!
 import Mypage from './pages/mypage'
 import Jjimitems from './pages/mypage/jjim-items'
@@ -34,7 +37,6 @@ import CheckInfo from './pages/payment/checkInfo'
 import PayMethod from './pages/payment/payMethod'
 import CheckOrder from './pages/payment/checkOrder'
 import OrderComplete from './pages/payment/orderComplete'
-
 
 function App() {
   return (
@@ -72,7 +74,8 @@ function App() {
       </Route>
       <Route path="/" element={<MainLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="search" element={<Search />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/detail/:productId" element={<Detail />} />
       </Route>
     </Routes>
   )
