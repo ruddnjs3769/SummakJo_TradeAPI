@@ -3,7 +3,7 @@ import './App.scss'
 import Home from './pages/home'
 import { Route, Routes } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
-import UserLayout from './layouts/UserLayout'
+import CommonLayout from './layouts/CommonLayout'
 
 //Main!!!!
 import Search from './pages/search'
@@ -35,30 +35,34 @@ import OrderComplete from './pages/payment/orderComplete'
 function App() {
   return (
     <Routes>
-      <Route path="/user" element={<UserLayout />}>
-        <Route path="/user/mypage/:username" element={<MyPage />} />
+      <Route path="/user" element={<CommonLayout />}>
+        <Route path="/user/:username" element={<MyPage />} />
         {/* MyPage!!!! */}
-        <Route path="/user/mypage/:username/jjimItems" element={<JjimItems />} />
-        <Route path="/user/mypage/:username/certProfile" element={<CertProfile />} />
-        <Route path="/user/mypage/:username/certProfile/editProfile" element={<EditProfile />} />
-        <Route path="/user/mypage/:username/account" element={<CheckAccount />} />
-        <Route path="/user/mypage/:username/account/addAccount" element={<AddAccount />} />
-        <Route path="/user/mypage/:username/account/banks/:bankName" element={<BankName />} />
+        <Route path="/user/:username/jjimItems" element={<JjimItems />} />
+        <Route path="/user/:username/certProfile" element={<CertProfile />} />
+        <Route path="/user/:username/certProfile/editProfile" element={<EditProfile />} />
+        <Route path="/user/:username/account" element={<CheckAccount />} />
+        <Route path="/user/:username/account/addAccount" element={<AddAccount />} />
+        <Route path="/user/:username/account/banks/:bankName" element={<BankName />} />
+      </Route>
+      <Route path="/access" element={<CommonLayout />}>
         {/* Access!!!! */}
-        <Route path="/user/access/" element={<Access />} />
-        <Route path="/user/access/agesignup" element={<AgeSignUp />} />
-        <Route path="/user/access/signupform" element={<SignUpForm />} />
-        <Route path="/user/access/login" element={<LogIn />} />
-        <Route path="/user/access/logout" element={<LogOut />} />
-        <Route path="/user/access/passwordcheck" element={<PasswordCheck />} />
-        <Route path="/user/access/passwordchangeform" element={<PasswordChangeForm />} />
+        <Route path="/access" element={<Access />} />
+        <Route path="/access/agesignup" element={<AgeSignUp />} />
+        <Route path="/access/signupform" element={<SignUpForm />} />
+        <Route path="/access/login" element={<LogIn />} />
+        <Route path="/access/logout" element={<LogOut />} />
+        <Route path="/access/passwordcheck" element={<PasswordCheck />} />
+        <Route path="/access/passwordchangeform" element={<PasswordChangeForm />} />
+      </Route>
+      <Route path="/payment" element={<CommonLayout />}>
         {/* Payment!!!! */}
-        <Route path="/user/:username/payment" element={<Payment />} />
-        <Route path="/user/:username/payment/agreement" element={<Agreement />} />
-        <Route path="/user/:username/payment/checkInfo" element={<CheckInfo />} />
-        <Route path="/user/:username/payment/payMethod" element={<PayMethod />} />
-        <Route path="/user/:username/payment/checkOrder" element={<CheckOrder />} />
-        <Route path="/user/:username/payment/orderComplete" element={<OrderComplete />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/payment/:username//agreement" element={<Agreement />} />
+        <Route path="/payment/:username/checkInfo" element={<CheckInfo />} />
+        <Route path="/payment/:username/payMethod" element={<PayMethod />} />
+        <Route path="/payment/:username/checkOrder" element={<CheckOrder />} />
+        <Route path="/payment/:username/orderComplete" element={<OrderComplete />} />
       </Route>
       {/* Main!!!! */}
       <Route path="/" element={<MainLayout />}>
