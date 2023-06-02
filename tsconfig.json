@@ -1,15 +1,15 @@
 {
-	"compilerOptions": {
-		/*
+  "compilerOptions": {
+    /*
     절대 경로를 현제 경로로 지정합니다.
     */
-		"baseUrl": "./",
-		"paths": {
-			"@/*": ["src/*"],
-			"@public": ["public"]
-		},
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@public": ["public"]
+    },
 
-		/*
+    /*
       Set the JavaScript language version for emitted JavaScript 
       and include compatible library declarations.
       default : "ES3"
@@ -18,30 +18,30 @@
       지원하고자하는 브라우저의 범위를 확인한 뒤 결정해야 합니다.
       IE11을 지원하지 않아도 되기 떄문에 ES6 === ES2015를 지정했습니다.
     */
-		"target": "ES2015",
+    "target": "ES2015",
 
-		/*
+    /*
       특정 기능 DOM, gnenerator 등 선택적으로 사용할 수 있습니다.
       default로 target에서 제공해주는 라이브러리를 사용합니다.
       차후 어떤 기능이 추가될지 모르기 때문에 default를 사용합니다.
       배포할 떄 번들링된 파일을 용량이 유의미한 차이를 보인다면 수정 할 예정입니다.
     */
-		// "lib": ["dom", "dom.iterable", "esnext"],
+    // "lib": ["dom", "dom.iterable", "esnext"],
 
-		/*
+    /*
       Allow JavaScript files to be a part of your program. 
       Use the 'checkJS' option to get errors from these files
       js 사용을 허락합니다
     */
-		"allowJs": true,
+    "allowJs": true,
 
-		/*
+    /*
      .d.ts 파일은 체크를 안합니다.
      .d.ts 파일이 없지만 default : false라서 일단 넣었습니다.
      "skipLibCheck": true, <= import시 문제가 생기는지 확인
      */
 
-		/* 
+    /* 
       Emit additional JavaScript to ease support for importing CommonJS modules.
       This enables 'allowSyntheticDefaultImports' for type compatibility. 
       CommonJS방식의 파일과 ESM 방식의 파일을 import export할때 생기는 문제를 해결해줍니다.
@@ -50,9 +50,9 @@
       import commonjs from "common" 이렇게 할 수 있게 됩니다.
       default가 false이니까 true를 지정하는 것을 추천합니다.
     */
-		"esModuleInterop": true,
+    "esModuleInterop": true,
 
-		/*
+    /*
       Emit additional JavaScript to ease support for importing CommonJS modules.
       This enables 'allowSyntheticDefaultImports' for type compatibility. 
       CommonJS방식의 파일과 ESM 방식의 파일을 import export할때 생기는 문제를 해결해줍니다.
@@ -61,19 +61,19 @@
       import commonjs from "common" 이렇게 할 수 있게 됩니다.
       default가 false이니까 true를 지정하는 것을 추천합니다.
     */
-		"allowSyntheticDefaultImports": true,
-		/*
+    "allowSyntheticDefaultImports": true,
+    /*
       파일명 대소문자 구분을 강제합니다.
       default : false입니다.
       e.g) 
       ./FileManager.ts 파일을 ./fileManager.ts로 지정해여 가져오려고 하면 TypeScript에서 오류가 발생합니다.
     */
-		"forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true,
 
-		// "allowSyntheticDefaultImports": true,
+    // "allowSyntheticDefaultImports": true,
 
-		"noFallthroughCasesInSwitch": true,
-		/*
+    "noFallthroughCasesInSwitch": true,
+    /*
       모듈 시스템을 지정합니다. import/export를 정하는 방식으로 통합니다.
       "CommonJS", "UMD", "AMD", "NodeNext", "ESNext", "ES2015", "ES2022" 등 을 제공합니다.
       
@@ -82,9 +82,9 @@
       AMD(Asynchronous Module Definition) : import/export + require을 혼합하여 사용합니다. 
       define같은 기능도 있습니다.
     */
-		"module": "ESNext",
+    "module": "ESNext",
 
-		/*
+    /*
       Specify how TypeScript looks up a file from a given module specifier. 
       모듈의 위치를 찾아가는데의 방식(전략)을 지정합니다.
       ** default : Classic
@@ -105,17 +105,17 @@
       프론트 웹앱을 만든다면 node, 서버를 만든다면 nodeNext || node 16이 좋을 것 같습니다.
       https://www.typescriptlang.org/docs/handbook/module-resolution.html 
     */
-		"moduleResolution": "node16",
+    "moduleResolution": "node16",
 
-		/*
+    /*
       Enable importing .json files.
       import settings from "./settings.json"; 이게 가능해집니다. 타입 검사까지도요
       settings.debug === true;  
       settings.dry === 2;
     */
-		"resolveJsonModule": true,
+    "resolveJsonModule": true,
 
-		/* 
+    /* 
       Ensure that each file can be safely transpiled without relying on other imports.
       각각의 파일을 다른 모듈로 만듭니다. 
       ** default : false
@@ -124,45 +124,45 @@
       프레임워크를 사용하고 있다면 true로 하고,
       복합 프로젝트나 nodejs환경에서 사용하고 있다면 false로 하는게 좋을 것 같습니다.
     */
-		"isolatedModules": true,
+    "isolatedModules": true,
 
-		/* 
+    /* 
     Disable emitting files from a compilation. 
     타입 에러가 있으면, 컴파일시 파일을 생성하지 않습니다.
     */
-		"noEmit": true,
+    "noEmit": true,
 
-		/* 
+    /* 
       Specify what JSX code is generated. 
       https://www.typescriptlang.org/ko/docs/handbook/jsx.html 
       어떤 jsx 코드를 만들었는지 ts컴파일러에게 알려줍니다. 
       이 모드는 출력 단계(컴파일 단계)에만 영향을 미치며 타입 검사에는 영향을 미치지 않습니다. 
     */
-		"jsx": "react-jsx",
+    "jsx": "react-jsx",
 
-		// "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
-		// "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
-		// "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
-		// "strictBindCallApply": true,                      /* Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
-		// "strictPropertyInitialization": true,             /* Check for class properties that are declared but not set in the constructor. */
-		// "noImplicitThis": true,                           /* Enable error reporting when 'this' is given the type 'any'. */
-		// "useUnknownInCatchVariables": true,               /* Default catch clause variables as 'unknown' instead of 'any'. */
-		// "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. */
-		// "noUnusedLocals": true,                           /* Enable error reporting when local variables aren't read. */
-		// "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read. */
-		// "exactOptionalPropertyTypes": true,               /* Interpret optional property types as written, rather than adding 'undefined'. */
-		// "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
-		// "noFallthroughCasesInSwitch": true,               /* Enable error reporting for fallthrough cases in switch statements. */
-		// "noUncheckedIndexedAccess": true,                 /* Add 'undefined' to a type when accessed using an index. */
-		// "noImplicitOverride": true,                       /* Ensure overriding members in derived classes are marked with an override modifier. */
-		// "noPropertyAccessFromIndexSignature": true,       /* Enforces using indexed accessors for keys declared using an indexed type. */
-		// "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */
-		// "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
-		/*
+    // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+    // "strictNullChecks": true,                         /* When type checking, take into account 'null' and 'undefined'. */
+    // "strictFunctionTypes": true,                      /* When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
+    // "strictBindCallApply": true,                      /* Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
+    // "strictPropertyInitialization": true,             /* Check for class properties that are declared but not set in the constructor. */
+    // "noImplicitThis": true,                           /* Enable error reporting when 'this' is given the type 'any'. */
+    // "useUnknownInCatchVariables": true,               /* Default catch clause variables as 'unknown' instead of 'any'. */
+    // "alwaysStrict": true,                             /* Ensure 'use strict' is always emitted. */
+    // "noUnusedLocals": true,                           /* Enable error reporting when local variables aren't read. */
+    // "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read. */
+    // "exactOptionalPropertyTypes": true,               /* Interpret optional property types as written, rather than adding 'undefined'. */
+    // "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
+    // "noFallthroughCasesInSwitch": true,               /* Enable error reporting for fallthrough cases in switch statements. */
+    // "noUncheckedIndexedAccess": true,                 /* Add 'undefined' to a type when accessed using an index. */
+    // "noImplicitOverride": true,                       /* Ensure overriding members in derived classes are marked with an override modifier. */
+    // "noPropertyAccessFromIndexSignature": true,       /* Enforces using indexed accessors for keys declared using an indexed type. */
+    // "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */
+    // "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
+    /*
       true시 위 옵션이 암시적으로 true가 됩니다.
       간단하게 설명하면 true시 any, null, this 등 타입을 불분명하게 하는 모든 것을 체크합니다.
     */
-		"strict": true
-	},
-	"include": ["src", "src/custom.d.ts"]
+    "strict": true
+  },
+  "include": ["src", "src/custom.d.ts"]
 }

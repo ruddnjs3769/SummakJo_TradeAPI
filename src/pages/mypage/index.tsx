@@ -3,8 +3,10 @@ import styles from './index.module.scss'
 
 export default function Mypage() {
   return (
-    <div className={styles.container}>
-      <h1>My Page</h1>
-    </div>
+    <>
+      <div className={styles.container}>
+        <h1>마이페이지 시작</h1>
+      </div>
+    </>
   )
 }
