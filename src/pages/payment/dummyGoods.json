@@ -1,0 +1,12 @@
+{
+  "id": "nbqtQvEivYwEXTDet7YM",
+  "title": "링핏트",
+  "price": 75000,
+  "description": "운동합쉬다",
+  "tags": ["운동", "신제품", "베스트"],
+  "thumbnail": "https://storage.googleapis.com/heropy-api/vIKMk_jy4Yv195256.png",
+  "photo": "https://storage.googleapis.com/heropy-api/voihKb3NLGcv195257.png",
+  "isSoldOut": false,
+  "reservations": [],
+  "discountRate": 0
+}
