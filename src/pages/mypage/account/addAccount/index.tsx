@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './index.modules.scss'
-export default function Addaccount() {
+export default function AddAccount() {
   return (
     <>
       <div className={styles.container}>
