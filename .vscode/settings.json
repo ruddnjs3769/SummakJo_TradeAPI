@@ -23,5 +23,6 @@
   "eslint.validate": ["javascript", "html"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true // 저장할 때마다 eslint가 자동으로 코드를 고쳐줍니다.
-  }
+  },
+  "git-blame.gitWebUrl": ""
 }
