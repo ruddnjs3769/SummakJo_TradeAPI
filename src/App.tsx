@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import UserLayout from './layouts/UserLayout'
 import Search from './pages/search'
+import Detail from './pages/detail'
 function App() {
   return (
     <Routes>
@@ -14,7 +15,8 @@ function App() {
       </Route>
       <Route path="/" element={<MainLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="search" element={<Search />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/detail/:productID" element={<Detail />} />
       </Route>
     </Routes>
   )
